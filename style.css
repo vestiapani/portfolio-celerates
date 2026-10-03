@@ -1,0 +1,199 @@
+:root {
+    --pastel-pink: #ffb7c5;
+    --pastel-cyan: #a2e4f5;
+    --pastel-purple: #e2d1f9;
+    --bg-color: #fafafa;
+    --text-main: #4a4a4a;
+    --text-light: #8e8e8e;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Typography Utilities */
+.font-syncopate {
+    font-family: 'Syncopate', sans-serif;
+}
+
+.tracking-widest {
+    letter-spacing: 0.3em;
+}
+
+.tracking-mega {
+    letter-spacing: 0.5em;
+}
+
+/* Hero Section */
+.hero-banner {
+    height: 85vh;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(250, 250, 250, 0) 50%,
+            rgba(250, 250, 250, 1) 100%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 183, 197, 0.4) 0%,
+            rgba(162, 228, 245, 0.4) 100%
+        ),
+        url('assets/img/hero-bg.png') center / cover no-repeat;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Glass Bubble */
+.glass-bubble {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+
+    padding: 1rem 1.5rem;
+
+    box-shadow: 0 8px 32px rgba(162, 228, 245, 0.2);
+
+    position: absolute;
+    bottom: 25%;
+    right: 15%;
+
+    z-index: 2;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Collage */
+.collage-container {
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+/* Project Cards */
+.aesthetic-card {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2rem;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    transition: all 0.4s cubic-bezier(
+        0.175,
+        0.885,
+        0.32,
+        1.275
+    );
+
+    position: relative;
+}
+
+.aesthetic-card:hover {
+    transform: scale(1.02) translateY(-5px) !important;
+    z-index: 10 !important;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Card 1 */
+.card-1 {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 183, 197, 0.6) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+
+    box-shadow: 0 15px 35px rgba(255, 183, 197, 0.2);
+    z-index: 3;
+}
+
+/* Card 2 */
+.card-2 {
+    background: linear-gradient(
+        135deg,
+        rgba(162, 228, 245, 0.6) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+
+    box-shadow: 0 15px 35px rgba(162, 228, 245, 0.2);
+    z-index: 2;
+}
+
+/* Card 3 */
+.card-3 {
+    background: linear-gradient(
+        135deg,
+        rgba(226, 209, 249, 0.6) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+
+    box-shadow: 0 15px 35px rgba(226, 209, 249, 0.2);
+    z-index: 1;
+}
+
+/* Desktop Layout */
+@media (min-width: 992px) {
+    .card-1 {
+        width: 95%;
+    }
+
+    .card-2 {
+        width: 105%;
+        margin-left: -3rem;
+        margin-top: -3rem;
+        transform: rotate(2deg);
+    }
+
+    .card-3 {
+        width: 90%;
+        margin-top: -2rem;
+        transform: translateX(-1rem) rotate(-1.5deg);
+    }
+}
+
+/* Minimalist List */
+.minimal-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 300;
+}
+
+.minimal-list li::before {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 6px;
+    height: 6px;
+
+    background-color: var(--pastel-pink);
+    border-radius: 50%;
+}
